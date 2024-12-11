@@ -1,0 +1,27 @@
+.status-ticker {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.status-ticker.animate::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background-color: #007bff; /* Change this color to match your brand */
+  animation: tick 1s linear infinite;
+}
+
+@keyframes tick {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
